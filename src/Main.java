@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         Biblioteca biblio = new Biblioteca("Alejandría");
 
         Scanner sc = new Scanner(System.in);
@@ -19,6 +20,7 @@ public class Main {
         boolean salir = false;
 
         while (!salir) {
+
             System.out.println("Seleccione una opción");
             System.out.println("1. Ver catálogo");
             System.out.println("2. Tomar prestado un libro concreto");
@@ -29,34 +31,28 @@ public class Main {
 
             String opcion = sc.nextLine();
 
-            switch(opcion) {
-                case "1":
-                    biblio.showCatalog();
-                    break;
-                case"2":
+            switch (opcion) {
+                case "1" -> biblio.showCatalog();
+                case "2" -> {
                     System.out.println("Seleccione uno de los libros");
                     biblio.showCatalog();
                     int posicion = sc.nextInt();
                     usuario.obtenerLibro(posicion, biblio);
-                    break;
-                case "3":
+                }
+                case "3" -> {
                     System.out.println("Obteniendo libro aleatorio");
                     String titulo = usuario.obtenerLibroAleatorio(biblio);
-
                     System.out.println("Ha obtenido el título: " + titulo);
-                    break;
-                case "4":
-                    System.out.println(usuario);
-                    break;
-                case"5":
+                }
+                case "4" -> System.out.println(usuario);
+                case "5" -> {
                     System.out.println("Introduzca el título del libro que quiere devolver");
                     System.out.println(usuario);
                     int libroParaDevolver = sc.nextInt();
                     String tituloLibro = usuario.obtenerTituloLibro(libroParaDevolver);
                     usuario.devolverLibro(tituloLibro, biblio);
-                    break;
-                case "Q":
-                    salir = true;
+                }
+                case "Q" -> salir = true;
             }
         }
     }

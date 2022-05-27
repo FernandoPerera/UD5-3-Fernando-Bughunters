@@ -26,6 +26,7 @@ public class Persona extends Usuario {
 
     @Override
     public void devolverLibro(String titulo, Biblioteca biblioteca) {
+
         biblioteca.devolverLibro(titulo);
 
         int posicion = librosPrestados.indexOf(titulo);
@@ -47,7 +48,6 @@ public class Persona extends Usuario {
             output += contador + " --> " + titulo + "\n";
             contador ++;
         }
-
         return output;
     }
 }
