@@ -25,12 +25,10 @@ public class Biblioteca {
         while(it.hasNext()) {
             System.out.println(contador + " --> " + it.next());
             contador++;
-            //posible fallo
         }
     }
 
     public String prestarLibro(int posicion) {
-
         return catalogoLibros.remove(posicion);
     }
 
